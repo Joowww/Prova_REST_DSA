@@ -16,10 +16,10 @@ public class ProductManagerTest {
     @Before
     public void setUp() {
         pm = new ProductManagerImpl();
-        pm.addProduct("C1", "Coca-cola zero", 2);
-        pm.addProduct("C2", "Coca-cola", 2.5);
-        pm.addProduct("B1", "Lomo queso", 3);
-        pm.addProduct("C1", "bacon queso", 3.5);
+        pm.addProduct("C1", "Coca-cola zero", 2, 2);
+        pm.addProduct("C2", "Coca-cola", 2.5, 0);
+        pm.addProduct("B1", "Lomo queso", 3, 7);
+        pm.addProduct("C1", "bacon queso", 3.5, 4);
     }
 
     @After

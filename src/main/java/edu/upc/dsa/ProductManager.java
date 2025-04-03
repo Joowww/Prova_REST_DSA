@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProductManager {
 
-    public void addProduct(String id, String name, double price);
+    public void addProduct(String id, String name, double price, int sales);
 
     public List<Product> getProductsByPrice();
 

@@ -36,8 +36,8 @@ public class ProductManagerImpl implements ProductManager {
     }
 
     @Override
-    public void addProduct(String id, String name, double price) {
-        Product p = new Product(id, name, price);
+    public void addProduct(String id, String name, double price, int sales) {
+        Product p = new Product(id, name, price, sales);
         productList.add(p);
         productMap.put(id, p);
     }

@@ -8,8 +8,8 @@ public class User {
     private List<Order> orderList;
 
     public User() {
-
     }
+
     public User(String dni) {
         this.dni = dni;
         this.orderList = new ArrayList<>();

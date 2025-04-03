@@ -27,14 +27,16 @@ public class ProductService {
     public ProductService() {
         this.tm = ProductManagerImpl.getInstance();
         if (tm.sizeUsers()==0) {
-            this.tm.addProduct("C1", "Coca-cola zero", 2);
-            this.tm.addProduct("C2", "Coca-cola", 2.5);
-            this.tm.addProduct("B1", "Lomo queso", 3);
-            this.tm.addProduct("C1", "bacon queso", 3.5);
+            this.tm.addProduct("C1", "Coca-cola zero", 2, 2);
+            this.tm.addProduct("C2", "Coca-cola", 2.5, 0);
+            this.tm.addProduct("B1", "Lomo queso", 3, 7);
+            this.tm.addProduct("C1", "bacon queso", 3.5, 4);
             User user1 = new User("123");
             this.tm.addUsuario(user1);
             Order order1 = new Order("123");
             this.tm.addOrder(order1);
+            order1.addLP(2, "C1");
+            order1.addLP(1, "C2");
         }
 
     }
@@ -136,7 +138,7 @@ public class ProductService {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response newProduct( Product pm) {
         if (pm.getNom()==null || pm.getId()==null)  return Response.status(500).entity(pm).build();
-        this.tm.addProduct(pm.getId(), pm.getNom(), pm.getPrice());
+        this.tm.addProduct(pm.getId(), pm.getNom(), pm.getPrice(), pm.getSales());
         return Response.status(201).entity(pm).build();
     }
 
